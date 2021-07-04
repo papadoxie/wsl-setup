@@ -5,7 +5,7 @@ cd ~
 sudo apt update
 sudo apt upgrade -y
 
-sudo apt install git bat build-essential tldr vim fish default-jre default-jdk rustc python3 python3-dev neofetch -y
+sudo apt install git bat build-essential tldr vim fish default-jre default-jdk rustc python3 python3-dev python3-pip neofetch -y
 
 cargo install exa
 
@@ -29,6 +29,19 @@ wget https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_1
 unzip ghidra_10.0_PUBLIC_20210621.zip
 rm ghidra_10.0_PUBLIC_20210621.zip
 mv ghidra_10.0_PUBLIC_20210621 Ghidra
+
+pip3 install pwntools keystone-engine unicorn capstone ropper
+bash -c "$(curl -fsSL http://gef.blah.cat/sh)"
+
+mkdir tools
+cd tools
+
+git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git
+git clone https://github.com/3ndG4me/KaliLists.git
+git clone https://github.com/sherlock-project/sherlock.git
+git clone https://github.com/rebootuser/LinEnum.git
+git clone https://github.com/Ganapati/RsaCtfTool.git
+git clone https://github.com/Anon-Exploiter/SUID3NUM.git
 
 chsh -s /usr/bin/fish
 fish
