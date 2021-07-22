@@ -5,8 +5,10 @@ cd ~
 sudo apt update
 sudo apt upgrade -y
 
-sudo apt install git bat build-essential tldr vim fish default-jre default-jdk rustc python3 python3-dev python3-pip neofetch -y
+sudo apt install git bat build-essential tldr vim fish default-jre default-jdk python3 python3-dev python3-pip neofetch -y
 
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+set -p PATH ~/.cargo/bin
 cargo install exa
 
 mkdir Code
@@ -19,7 +21,7 @@ cd terminal-config/
 cp .config ~/.config
 cp .vimrc ~/.vimrc
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
-vim -c ":source ~/vimrc"
+vim -c ":source ~/.vimrc"
 
 cd ~/vim/autoload/YouCompleteMe/
 ./install.py
